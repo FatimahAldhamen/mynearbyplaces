@@ -38,6 +38,7 @@
 .form-container {
     max-width: 1200px;
     margin: auto;
+    padding: 0 20px;
 }
 
 input {
@@ -80,7 +81,6 @@ input {
 .search-results {
     max-width: 1200px;
     margin: auto;
-    min-width: 600px;
     padding: 0 20px;
 }
 
