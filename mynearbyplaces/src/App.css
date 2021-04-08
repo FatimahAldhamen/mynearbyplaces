@@ -50,6 +50,7 @@ input {
 .header {
     position: absolute;
     display: flex;
+    align-items: center;
     justify-content: flex-end;
     left: 50%;
     color: rgb(255, 255, 255);
@@ -59,12 +60,16 @@ input {
     transform: translate(-50%);
 }
 
+.btn {
+    white-space: nowrap;
+}
+
 .header-text {
-    /* width: 90%; */
-    position: absolute;
+    /* position: absolute;
     right: 50%;
     transform: translate(50%);
-    font-size: 2.5em;
+    font-size: 2.5em; */
+    width: 100%;
 }
 
 .form-row {
