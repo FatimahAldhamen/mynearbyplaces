@@ -26,7 +26,7 @@ const Home = () => {
                 </Carousel.Item>
             </Carousel>
             <div className="container">
-                <form action="/mynearbyplaces/searchresults" className="custom-form">
+                <form action="/mynearbyplaces/#/searchresults" className="custom-form">
                     <div className="form-group custom-form"><input type="text" placeholder="Place" required />
                         <input type="text" placeholder="Location" required /></div>
                     <button className="btn btn-primary">Search</button>

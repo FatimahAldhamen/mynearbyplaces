@@ -10,13 +10,13 @@ import SearchResults from "./routes/SearchResults";
 const App = () => {
   return (
     <div>
-       <HashRouter basename="/mynearbyplaces">
+       <HashRouter basename="/mynearbyplaces/">
         <Switch>
-          <Route exact path="/mynearbyplaces/" component={Home} />
-          <Route exact path="/mynearbyplaces/searchresults" component={SearchResults} />
-          <Route exact path="/mynearbyplaces/:id/update" component={Update} />
-          <Route exact path="/mynearbyplaces/:id/details" component={Details} />
-          <Route exact path="/mynearbyplaces/addplace" component={AddPlace} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/searchresults" component={SearchResults} />
+          <Route exact path="/:id/update" component={Update} />
+          <Route exact path="/:id/details" component={Details} />
+          <Route exact path="/addplace" component={AddPlace} />
         </Switch>
       </HashRouter>
     </div>
