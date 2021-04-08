@@ -4,7 +4,7 @@ import "../App.css";
 const header = () => {
     return (
         <div className="header">
-            <h1 className="header-text text-center font-weight-light">Yelp</h1>
+            <h1 className="header-text text-center font-weight-light">My Near By Places</h1>
             <a className="btn btn-primary" href="/mynearbyplaces/#/addplace">Add Place</a>
         </div>
     )
