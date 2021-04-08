@@ -1,6 +1,6 @@
 import React from 'react';
 import "./App.css";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserHashRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./routes/Home";
 import Update from "./routes/Update";
 import Details from "./routes/Details";
@@ -10,7 +10,7 @@ import SearchResults from "./routes/SearchResults";
 const App = () => {
   return (
     <div>
-       <Router>
+       <Router basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route exact path="/mynearbyplaces/" component={Home} />
           <Route exact path="/mynearbyplaces/searchresults" component={SearchResults} />
