@@ -1,0 +1,13 @@
+import React from 'react';
+import "../App.css";
+
+const header = () => {
+    return (
+        <div className="header">
+            <h1 className="header-text text-center font-weight-light">Yelp</h1>
+            <a className="btn btn-primary" href="/addplace">Add Place</a>
+        </div>
+    )
+}
+
+export default header
