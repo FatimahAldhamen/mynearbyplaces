@@ -18,7 +18,7 @@ const App = () => {
           <Route exact path="/mynearbyplaces/:id/details" component={Details} />
           <Route exact path="/mynearbyplaces/addplace" component={AddPlace} />
         </Switch>
-      </Router>
+      </HashRouter>
     </div>
   )
 }
