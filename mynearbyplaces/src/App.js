@@ -13,7 +13,7 @@ const App = () => {
        <HashRouter basename="/mynearbyplaces/">
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/searchresults" component={SearchResults} />
+          <Route exact path="/searchresults/:location/:place" component={SearchResults} />
           <Route exact path="/:id/update" component={Update} />
           <Route exact path="/:id/details" component={Details} />
           <Route exact path="/addplace" component={AddPlace} />

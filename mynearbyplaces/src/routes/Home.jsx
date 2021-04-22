@@ -5,6 +5,11 @@ import Header from "../components/Header";
 import slide_1 from "../images/slide_1.jpg";
 import slide_2 from "../images/slide_2.jpg";
 
+const submitHandler=(event)=>{
+    event.preventDefault();
+    window.location="#/searchresults/"+document.getElementById("location").value+"/"+document.getElementById("place").value;
+}
+
 const Home = () => {
     return (
         <div>
@@ -26,9 +31,9 @@ const Home = () => {
                 </Carousel.Item>
             </Carousel>
             <div className="container">
-                <form action="/mynearbyplaces/#/searchresults" className="custom-form">
-                    <div className="form-group custom-form"><input type="text" placeholder="Place" required />
-                        <input type="text" placeholder="Location" required /></div>
+                <form onSubmit={submitHandler} className="custom-form">
+                    <div className="form-group custom-form"><input type="text" placeholder="Place" id="place" required />
+                        <input type="text" placeholder="Location" required id="location" /></div>
                     <button className="btn btn-primary">Search</button>
                 </form>
             </div>
