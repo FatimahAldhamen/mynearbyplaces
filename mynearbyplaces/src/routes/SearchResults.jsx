@@ -8,7 +8,7 @@ const SearchResults = () => {
     const [places, setPlaces] = useState([]);
     useEffect(() => {
         async function fetchData() {
-            const URL = "http://localhost:3001/places/" + location + "/" + place;
+            const URL = "https://fatimahaldhamen-mynearbyplace.herokuapp.com/places/" + location + "/" + place;
             await fetch(URL, { method: 'GET' })
                 .then((res) => res.json())
                 .then((data) => {
@@ -16,7 +16,7 @@ const SearchResults = () => {
                 });
         }
         fetchData();
-    }, [location,place]);
+    }, [location, place]);
     let history = useHistory();
 
     const handlePlaceClick = (id) => {

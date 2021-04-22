@@ -10,7 +10,7 @@ import SearchResults from "./routes/SearchResults";
 const App = () => {
   return (
     <div>
-       <HashRouter basename="/mynearbyplaces/">
+      <HashRouter basename="/mynearbyplaces/">
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/searchresults/:location/:place" component={SearchResults} />

@@ -8,7 +8,7 @@ const Details = () => {
     let {id} = useParams();
     let [reviews,setReviews]=useState([]);
     const submitHandler=async ()=>{
-        const URL = "http://localhost:3001/place/"+id+"/review";
+        const URL = "https://fatimahaldhamen-mynearbyplace.herokuapp.com/place/"+id+"/review";
         await fetch(URL, { method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
@@ -25,7 +25,7 @@ const Details = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const URL = "http://localhost:3001/place/" + id + "/review";
+            const URL = "https://fatimahaldhamen-mynearbyplace.herokuapp.com/place/" + id + "/review";
             await fetch(URL, { method: 'GET' })
                 .then((res) => res.json())
                 .then((data) => {

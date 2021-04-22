@@ -5,9 +5,9 @@ import Header from "../components/Header";
 import slide_1 from "../images/slide_1.jpg";
 import slide_2 from "../images/slide_2.jpg";
 
-const submitHandler=(event)=>{
+const submitHandler = (event) => {
     event.preventDefault();
-    window.location="#/searchresults/"+document.getElementById("location").value+"/"+document.getElementById("place").value;
+    window.location = "#/searchresults/" + document.getElementById("location").value + "/" + document.getElementById("place").value;
 }
 
 const Home = () => {
