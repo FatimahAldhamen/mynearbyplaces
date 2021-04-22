@@ -37,7 +37,7 @@ const Details = () => {
 
     return (
         <div>
-            <h1 className="text-center font-weight-light my-4">Banocci Details</h1>
+            <h1 className="text-center font-weight-light my-4">Reviews</h1>
             <div className='reviews-container'>
                 {reviews.map((review, key) => (
                     <Card key={key}>
