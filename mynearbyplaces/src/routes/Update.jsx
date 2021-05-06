@@ -16,7 +16,7 @@ const Update = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                alert("Place Updated:\nId: " + data.place.id + "\nName: " + data.place.name + "\nLocation: " + data.place.location + "\nPlace: " + data.place.place);
+                alert("Place Updated Successfully!");
             })
         window.location.reload();
     }
@@ -29,7 +29,7 @@ const Update = () => {
             await fetch(URL, { method: 'GET' })
                 .then((res) => res.json())
                 .then((data) => {
-                    setDetails(data);
+                    setDetails(data[0]);
                 });
         }
         fetchData();

@@ -28,12 +28,13 @@ const SearchResults = () => {
     }
     const handleRemoveClick = (e, id) => {
         e.stopPropagation();
-        fetch('http://localhost:3001/delete/' + id, {
+        e.preventDefault();
+        fetch('https://fatimahaldhamen-mynearbyplace.herokuapp.com/delete/' + id, {
             method: 'DELETE',
         })
             .then(res => res.json())
             .then(data => console.log(data));
-        window.location.reload();
+        alert("Place Removed Successfully!");
     }
     return (
         <div className="search-results">
