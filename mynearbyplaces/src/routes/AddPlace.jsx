@@ -14,7 +14,7 @@ const submitHandler = async (event) => {
     })
         .then((res) => res.json())
         .then((data) => {
-            alert("Place Added:\nId: " + data.id + "\nName: " + data.name + "\nLocation: " + data.location + "\nPlace: " + data.place);
+            alert("Place Added Successfully!");
         })
     window.location.reload();
 }
