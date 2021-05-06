@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./App.css";
 import { HashRouter, Switch, Route } from "react-router-dom";
 import Home from "./routes/Home";
@@ -13,15 +13,18 @@ const App = () => {
       <HashRouter basename="/mynearbyplaces/">
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/searchresults/:location/:place" component={SearchResults} />
+          <Route
+            exact
+            path="/searchresults/:location/:place"
+            component={SearchResults}
+          />
           <Route exact path="/:id/update" component={Update} />
           <Route exact path="/:id/details" component={Details} />
           <Route exact path="/addplace" component={AddPlace} />
         </Switch>
       </HashRouter>
     </div>
-  )
-}
+  );
+};
 
-export default App
-
+export default App;

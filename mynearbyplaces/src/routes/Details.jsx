@@ -5,21 +5,23 @@ import { useParams } from 'react-router';
 
 
 const Details = () => {
-    let {id} = useParams();
-    let [reviews,setReviews]=useState([]);
-    const submitHandler=async ()=>{
-        const URL = "https://fatimahaldhamen-mynearbyplace.herokuapp.com/place/"+id+"/review";
-        await fetch(URL, { method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-        name: document.getElementById("name").value,
-        stars: document.getElementById("rating").value,
-        body: document.getElementById("reviewText").value
-    })})
-        .then((res) => res.json())
-        .then((data) => {
-            alert("Review Added:\nName: "+data.name+"\nStars: "+data.stars+"\nBody: "+data.body);
-    })
+    let { id } = useParams();
+    let [reviews, setReviews] = useState([]);
+    const submitHandler = async () => {
+        const URL = "https://fatimahaldhamen-mynearbyplace.herokuapp.com/place/" + id + "/review";
+        await fetch(URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                name: document.getElementById("name").value,
+                stars: document.getElementById("rating").value,
+                body: document.getElementById("reviewText").value
+            })
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                alert("Review Added!");
+            })
         window.location.reload();
     };
 
@@ -29,7 +31,7 @@ const Details = () => {
             await fetch(URL, { method: 'GET' })
                 .then((res) => res.json())
                 .then((data) => {
-                    setReviews(data);
+                    setReviews([data]);
                 });
         }
         fetchData();
@@ -51,7 +53,7 @@ const Details = () => {
                             </blockquote>
                         </Card.Body>
                     </Card>))}
-              
+
             </div>
             <div className="form-container">
                 <Form >

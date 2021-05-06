@@ -60,7 +60,7 @@ const SearchResults = () => {
                                     <td>{place.name}</td>
                                     <td>{place.location}</td>
                                     <td>{place.place}</td>
-                                    <td>{place.reviews} Review(s)</td>
+                                    <td>{(place.rating != '') ? ('1') : ('0')} Review(s)</td>
                                     <td><button onClick={(e) => handleUpdateClick(e, place.id)} className="btn btn-primary">Update</button></td>
                                     <td><button onClick={(e) => handleRemoveClick(e, place.id)} className="btn btn-primary">Remove</button></td>
                                 </tr>
