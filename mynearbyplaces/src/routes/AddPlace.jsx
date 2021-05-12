@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 
 const AddPlace = () => {
     const [details, setDetails] = useState({ name: '', place: '', location: '' })
+    const [disableAdd, setDisableAdd] = useState(false);
     const submitHandler = async (event) => {
+        setDisableAdd(true);
         const URL = "https://fatimahaldhamen-mynearbyplace.herokuapp.com/add/place";
         event.preventDefault();
         await fetch(URL, {
@@ -35,7 +37,7 @@ const AddPlace = () => {
                     <div className="col">
                         <input id="place" type="text" className="form-control" placeholder="place" onChange={e => setDetails({ ...details, place: e.target.value })} value={details.place} required />
                     </div>
-                    <button className="btn btn-primary">Add</button>
+                    <button disabled={disableAdd} className="btn btn-primary">Add</button>
                 </div>
             </form>
         </div>

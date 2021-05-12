@@ -7,15 +7,16 @@ import { useParams } from 'react-router';
 const Details = () => {
     let { id } = useParams();
     let [reviews, setReviews] = useState([]);
+    const [details, setDetails] = useState({ name: '', stars: '', body: '' })
     const submitHandler = async () => {
         const URL = "https://fatimahaldhamen-mynearbyplace.herokuapp.com/place/" + id + "/review";
         await fetch(URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                name: document.getElementById("name").value,
-                stars: document.getElementById("rating").value,
-                body: document.getElementById("reviewText").value
+                name: details.name,
+                stars: details.stars,
+                body: details.body
             })
         })
             .then((res) => res.json())
@@ -61,12 +62,12 @@ const Details = () => {
 
                         <Form.Group as={Col} >
                             <Form.Label>Name</Form.Label>
-                            <Form.Control id="name" type="text" placeholder="Enter Name" />
+                            <Form.Control id="name" type="text" onChange={e => setDetails({ ...details, name: e.target.value })} value={details.name} placeholder="Enter Name" required />
                         </Form.Group>
                         <Form.Group as={Col} >
                             <Form.Label>Rating</Form.Label>
-                            <Form.Control id="rating" as="select" defaultValue="Choose...">
-                                <option>Choose...</option>
+                            <Form.Control id="rating" as="select" onChange={e => setDetails({ ...details, stars: e.target.value })} value={details.stars} defaultChecked="1">
+                                <option value="" disabled>Choose...</option>
                                 <option value="★">1</option>
                                 <option value="★★">2</option>
                                 <option value="★★★">3</option>
@@ -77,7 +78,7 @@ const Details = () => {
                     </Row>
                     <Form.Group >
                         <Form.Label>Write a Review</Form.Label>
-                        <Form.Control id="reviewText" as="textarea" rows={3} />
+                        <Form.Control id="reviewText" onChange={e => setDetails({ ...details, body: e.target.value })} value={details.body} as="textarea" rows={3} required />
                     </Form.Group>
                     <Button onClick={submitHandler} variant="primary">Submit</Button>
                 </Form>

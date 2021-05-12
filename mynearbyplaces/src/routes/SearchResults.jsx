@@ -35,6 +35,7 @@ const SearchResults = () => {
             .then(res => res.json())
             .then(data => console.log(data));
         alert("Place Removed Successfully!");
+        window.location.reload();
     }
     return (
         <div className="search-results">
