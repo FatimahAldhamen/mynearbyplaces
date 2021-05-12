@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 
 const Update = () => {
+    let [details, setDetails] = useState({ id: "", name: "", location: "", place: "" });
     const submitHandler = async (event) => {
         const URL = "https://fatimahaldhamen-mynearbyplace.herokuapp.com/place/" + details.id;
         event.preventDefault();
@@ -9,9 +10,9 @@ const Update = () => {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                name: document.getElementById("name").value,
-                place: document.getElementById("place").value,
-                location: document.getElementById("location").value
+                name: details.name,
+                place: details.place,
+                location: details.location
             })
         })
             .then((res) => res.json())
@@ -21,7 +22,6 @@ const Update = () => {
         window.location.reload();
     }
 
-    let [details, setDetails] = useState({ id: "", name: "", location: "", place: "" });
     let { id } = useParams();
     useEffect(() => {
         async function fetchData() {
